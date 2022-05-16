@@ -1,6 +1,6 @@
 import { Flex, useColorModeValue, Container } from '@chakra-ui/react';
 import React from 'react';
-import Banner from './banner/Banner';
+
 import Carousel from './carousel/Carousel';
 
 const Home = () => {

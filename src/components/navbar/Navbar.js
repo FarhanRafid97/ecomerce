@@ -14,7 +14,8 @@ import {
 } from '@chakra-ui/react';
 import { Link as ReachLink } from 'react-router-dom';
 import { MoonIcon, SunIcon, SearchIcon } from '@chakra-ui/icons';
-import { BsLightningCharge } from 'react-icons/bs';
+import { BsSearch } from 'react-icons/bs';
+import { AiOutlineShoppingCart, AiFillHeart } from 'react-icons/ai';
 
 const Navbar = ({ mobile }) => {
   const { toggleColorMode } = useColorMode();
@@ -29,37 +30,48 @@ const Navbar = ({ mobile }) => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Flex flexBasis="25%" alignItems="center" columnGap="5px">
-          <Flex fontSize="20px" onClick={toggleColorMode}>
-            <BsLightningCharge />
-          </Flex>
-          <Text fontSize={['sm', 'md', 'lg', 'xl']}>VorteX</Text>
-        </Flex>
-        <Flex flexBasis="25%" justifyContent="center">
-          <Link as={ReachLink} to="/home">
-            Home
-          </Link>
+        <Flex flexBasis="23%" alignItems="center" columnGap="5px">
+          <Text fontSize={['sm', 'md', 'lg', 'xl']} fontWeight="light">
+            VorteX
+          </Text>
         </Flex>
 
         {!mobile && (
-          <Flex flexBasis="25%" alignItems="center">
+          <Flex flexBasis="40%" alignItems="center">
             <Input
-              width="200px"
+              width="100%"
               marginRight="5px"
               borderColor="black"
-              placeholder="Search item..."
+              placeholder="Search items..."
               height="30px"
-              borderRadius="none"
+              borderRadius="2px"
+              fontSize="12px"
             />
-            <IconButton
-              aria-label="Search database"
-              bg="gray.500"
-              transition="0.5s"
-              _hover={{ bg: 'teal.600', transition: '0.5s' }}
-              icon={<SearchIcon color="gray.50" />}
-            />
+            <BsSearch />
           </Flex>
         )}
+        <Flex
+          flexBasis="25%"
+          justifyContent="space-between"
+          alignItems="center"
+          fontWeight="light"
+        >
+          <Link as={ReachLink} to="/home" textDecoration="none">
+            Home
+          </Link>
+          <Link as={ReachLink} to="/home">
+            Home
+          </Link>
+          <Link as={ReachLink} to="/home">
+            Home
+          </Link>
+          <Flex alignItems="center" fontSize="19px" columnGap="10px">
+            <AiFillHeart />
+            <Link to="shop">
+              <AiOutlineShoppingCart />
+            </Link>
+          </Flex>
+        </Flex>
       </Container>
     </Flex>
   );
