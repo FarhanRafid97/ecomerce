@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react';
 import { Link as ReachLink } from 'react-router-dom';
 import { MoonIcon, SunIcon, SearchIcon } from '@chakra-ui/icons';
+import { BsLightningCharge } from 'react-icons/bs';
 
 const Navbar = ({ mobile }) => {
   const { toggleColorMode } = useColorMode();
@@ -21,7 +22,7 @@ const Navbar = ({ mobile }) => {
   const iconDark = useColorModeValue(<MoonIcon />, <SunIcon />);
 
   return (
-    <Flex bg={bgColor} padding="15px 0">
+    <Flex bg={bgColor} padding="15px 0" borderBottom="2px solid black">
       <Container
         maxWidth="80%"
         display="flex"
@@ -30,9 +31,9 @@ const Navbar = ({ mobile }) => {
       >
         <Flex flexBasis="25%" alignItems="center" columnGap="5px">
           <Flex fontSize="20px" onClick={toggleColorMode}>
-            {iconDark}
+            <BsLightningCharge />
           </Flex>
-          <Text fontSize={['sm', 'md', 'lg', 'xl']}>LMFAO Just Buy</Text>
+          <Text fontSize={['sm', 'md', 'lg', 'xl']}>VorteX</Text>
         </Flex>
         <Flex flexBasis="25%" justifyContent="center">
           <Link as={ReachLink} to="/home">
@@ -47,6 +48,8 @@ const Navbar = ({ mobile }) => {
               marginRight="5px"
               borderColor="black"
               placeholder="Search item..."
+              height="30px"
+              borderRadius="none"
             />
             <IconButton
               aria-label="Search database"

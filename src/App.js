@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Carousel from './components/carousel/Carousel';
+import Carousel from './components/home/carousel/Carousel';
 
 import Home from './components/home/Home';
 import Navbar from './components/navbar/Navbar';
