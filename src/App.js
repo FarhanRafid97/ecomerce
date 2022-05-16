@@ -20,7 +20,7 @@ function App() {
       <div className="App">
         <Navbar mobile={mobile} />
         <Routes>
-          <Route path="/home" element={<Home mobile={mobile} />} />
+          <Route path="/" element={<Home mobile={mobile} />} />
           <Route path="/carousel" element={<Carousel mobile={mobile} />} />
         </Routes>
       </div>
