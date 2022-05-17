@@ -41,7 +41,6 @@ const Carousel = ({ mobile }) => {
   useEffect(() => {
     dispatch(getDataProduk());
   }, [dispatch, mobile]);
-  console.log(dataCarousel);
 
   return (
     <Container
@@ -49,7 +48,7 @@ const Carousel = ({ mobile }) => {
       className="wrapper"
       bg="red.200"
       padding="0"
-      height={['50vh', '100vh']}
+      height={['50vh', '50vh', '50vh', '100vh']}
       backgroundPosition="bottom"
     >
       <Swiper
@@ -66,10 +65,10 @@ const Carousel = ({ mobile }) => {
         <div className="wrapper">
           {dataCarousel.map((data, index) => (
             <>
-              <SwiperSlide className="slide">
+              <SwiperSlide className="slide" key={index * 2}>
                 <Box
                   width="100%"
-                  height={['50vh', '100vh']}
+                  height="100%"
                   position="relative"
                   className="boxBg"
                   overflow="hidden"
@@ -80,7 +79,7 @@ const Carousel = ({ mobile }) => {
                     className="imageCarousel"
                     backgroundPosition="top"
                     backgroundSize="cover"
-                    height={['50vh', '100vh']}
+                    height={['50vh', '50vh', '50vh', '100vh']}
                   />
                   <Flex
                     position="absolute"
@@ -90,11 +89,10 @@ const Carousel = ({ mobile }) => {
                     textAlign="center"
                     flexDirection="column"
                     alignItems="center"
-                    rowGap="5px"
                     width="80%"
                   >
                     <Text
-                      fontSize={['11px', '25px', '26px']}
+                      fontSize={['11px', '25px', '22px']}
                       fontWeight={['light', 'thin']}
                       color="white"
                     >
@@ -107,6 +105,7 @@ const Carousel = ({ mobile }) => {
                       {data.category}
                     </Text>
                     <Button
+                      marginTop="15px"
                       borderColor="black"
                       bg="blackAlpha.300"
                       width={['100px', '200px']}
@@ -123,7 +122,6 @@ const Carousel = ({ mobile }) => {
                   </Flex>
                 </Box>
               </SwiperSlide>
-              {index < dataCarousel.length - 1 && <SwiperSlide></SwiperSlide>}
             </>
           ))}
         </div>

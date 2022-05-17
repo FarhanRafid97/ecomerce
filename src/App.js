@@ -9,7 +9,7 @@ import Navbar from './components/navbar/Navbar';
 function App() {
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 700) {
+    if (window.innerWidth < 900) {
       setMobile(true);
     } else {
       setMobile(false);
@@ -21,7 +21,7 @@ function App() {
         <Navbar mobile={mobile} />
         <Routes>
           <Route path="/" element={<Home mobile={mobile} />} />
-          <Route path="/carousel" element={<Carousel mobile={mobile} />} />
+          {/* <Route path="/custom" element={<Custom mobile={mobile} />} /> */}
         </Routes>
       </div>
     </>
