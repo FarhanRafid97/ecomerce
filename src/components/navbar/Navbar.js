@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import {
   Flex,
-  Spacer,
-  Box,
   Link,
   Container,
-  Button,
   Text,
-  useColorMode,
   useColorModeValue,
   Input,
-  IconButton,
 } from '@chakra-ui/react';
 import { Link as ReachLink } from 'react-router-dom';
-import { MoonIcon, SunIcon, SearchIcon } from '@chakra-ui/icons';
 import { BsSearch } from 'react-icons/bs';
 import {
   AiOutlineShoppingCart,
@@ -24,9 +18,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import navMenu from './navMenu';
 
 const Navbar = ({ mobile }) => {
-  const { toggleColorMode } = useColorMode();
   const bgColor = useColorModeValue('white', 'gray.700');
-  const iconDark = useColorModeValue(<MoonIcon />, <SunIcon />);
   const [navActive, setNavActive] = useState(false);
   const [stickyNav, setStickyNav] = useState(false);
   const scrollNav = () => {

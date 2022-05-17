@@ -9,7 +9,7 @@ import {
   Button,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { useDispatch, useSelector } from 'react-redux';
+
 import SwiperCore, {
   Navigation,
   Pagination,
@@ -17,7 +17,6 @@ import SwiperCore, {
   A11y,
   EffectFade,
 } from 'swiper';
-import { StarIcon } from '@chakra-ui/icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -27,26 +26,16 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/effect-fade';
-import { getDataProduk } from '../../../globalState/actions/produk';
+
 import dataCarousel from './dataCarousel';
 
 // Import Swiper <sty></sty>les
 SwiperCore.use([Navigation, Pagination]);
 const Carousel = ({ mobile }) => {
-  const bgColor = useColorModeValue('#f8f9fa', '#e9ecef');
-
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.product);
-
-  useEffect(() => {
-    dispatch(getDataProduk());
-  }, [dispatch, mobile]);
-
   return (
     <Container
       maxW="100%"
       className="wrapper"
-      bg="red.200"
       padding="0"
       height={['50vh', '50vh', '50vh', '100vh']}
       backgroundPosition="bottom"

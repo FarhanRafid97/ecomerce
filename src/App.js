@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Carousel from './components/home/carousel/Carousel';
+import 'swiper/css/bundle';
 
 import Home from './components/home/Home';
 import Navbar from './components/navbar/Navbar';
+import MenProduct from './components/product/Men/MenProduct';
 
 function App() {
   const [mobile, setMobile] = useState(false);
@@ -18,10 +19,10 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navbar mobile={mobile} />
+        {/* <Navbar mobile={mobile} /> */}
         <Routes>
           <Route path="/" element={<Home mobile={mobile} />} />
-          {/* <Route path="/custom" element={<Custom mobile={mobile} />} /> */}
+          {/* <Route path="/" element={<MenProduct mobile={mobile} />} /> */}
         </Routes>
       </div>
     </>
